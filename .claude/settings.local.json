@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv/bin/pip install *)",
+      "Bash(.venv/bin/python -m pytest tests/ -v)",
+      "Bash(.venv/bin/python evaluator.py)",
+      "Bash(.venv/bin/python -m pytest tests/)",
+      "Bash(.venv/bin/python main.py --iterations 1000)",
+      "Bash(.venv/bin/python -c ' *)",
+      "Bash(.venv/bin/python main.py --iterations 50 --out /tmp/s.json)"
+    ]
+  }
+}

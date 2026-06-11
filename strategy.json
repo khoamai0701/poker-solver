@@ -1,0 +1,2595 @@
+{
+  "board": [
+    "Ks",
+    "7h",
+    "2d",
+    "8c",
+    "3s"
+  ],
+  "pot": 100.0,
+  "iterations": 1000,
+  "expected_pot_share": {
+    "OOP": 94.42,
+    "IP": 5.58
+  },
+  "ranges": {
+    "OOP": [
+      "AcAd",
+      "AcAh",
+      "AcAs",
+      "AdAh",
+      "AdAs",
+      "AhAs",
+      "KcKd",
+      "KcKh",
+      "KdKh",
+      "AcKc",
+      "AcKd",
+      "AcKh",
+      "AdKc",
+      "AdKd",
+      "AdKh",
+      "AhKc",
+      "AhKd",
+      "AhKh",
+      "AsKc",
+      "AsKd",
+      "AsKh",
+      "8d8h",
+      "8d8s",
+      "8h8s",
+      "7c7d",
+      "7c7s",
+      "7d7s"
+    ],
+    "IP": [
+      "KcQc",
+      "KdQd",
+      "KhQh",
+      "KcJc",
+      "KdJd",
+      "KhJh",
+      "9c9d",
+      "9c9h",
+      "9c9s",
+      "9d9h",
+      "9d9s",
+      "9h9s",
+      "8d7d",
+      "8s7s",
+      "Ac7c",
+      "Ad7d",
+      "As7s",
+      "QcJc",
+      "QdJd",
+      "QhJh",
+      "QsJs",
+      "Tc9c",
+      "Td9d",
+      "Th9h",
+      "Ts9s"
+    ]
+  },
+  "strategies": {
+    "OOP": {
+      "root": {
+        "AcAd": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9239,
+            "bet 50": 0.0,
+            "bet 100": 0.0761
+          }
+        },
+        "AcAh": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9332,
+            "bet 50": 0.0,
+            "bet 100": 0.0668
+          }
+        },
+        "AcAs": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9939,
+            "bet 50": 0.006,
+            "bet 100": 0.0001
+          }
+        },
+        "AdAh": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9575,
+            "bet 50": 0.0041,
+            "bet 100": 0.0384
+          }
+        },
+        "AdAs": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9712,
+            "bet 50": 0.005,
+            "bet 100": 0.0239
+          }
+        },
+        "AhAs": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9804,
+            "bet 50": 0.0037,
+            "bet 100": 0.0159
+          }
+        },
+        "KcKd": {
+          "strength": 5742,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "check": 0.551,
+            "bet 50": 0.0028,
+            "bet 100": 0.4462
+          }
+        },
+        "KcKh": {
+          "strength": 5742,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "check": 0.4202,
+            "bet 50": 0.0203,
+            "bet 100": 0.5595
+          }
+        },
+        "KdKh": {
+          "strength": 5742,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "check": 0.3468,
+            "bet 50": 0.0399,
+            "bet 100": 0.6134
+          }
+        },
+        "AcKc": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9967,
+            "bet 50": 0.001,
+            "bet 100": 0.0023
+          }
+        },
+        "AcKd": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9627,
+            "bet 50": 0.0069,
+            "bet 100": 0.0304
+          }
+        },
+        "AcKh": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9396,
+            "bet 50": 0.0145,
+            "bet 100": 0.0458
+          }
+        },
+        "AdKc": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9388,
+            "bet 50": 0.0079,
+            "bet 100": 0.0533
+          }
+        },
+        "AdKd": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9074,
+            "bet 50": 0.0029,
+            "bet 100": 0.0897
+          }
+        },
+        "AdKh": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.911,
+            "bet 50": 0.0036,
+            "bet 100": 0.0854
+          }
+        },
+        "AhKc": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9408,
+            "bet 50": 0.001,
+            "bet 100": 0.0582
+          }
+        },
+        "AhKd": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9136,
+            "bet 50": 0.0036,
+            "bet 100": 0.0828
+          }
+        },
+        "AhKh": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9178,
+            "bet 50": 0.0019,
+            "bet 100": 0.0804
+          }
+        },
+        "AsKc": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9558,
+            "bet 50": 0.0023,
+            "bet 100": 0.0419
+          }
+        },
+        "AsKd": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9068,
+            "bet 50": 0.0109,
+            "bet 100": 0.0823
+          }
+        },
+        "AsKh": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.916,
+            "bet 50": 0.0072,
+            "bet 100": 0.0768
+          }
+        },
+        "8d8h": {
+          "strength": 5442,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "check": 0.9908,
+            "bet 50": 0.0065,
+            "bet 100": 0.0027
+          }
+        },
+        "8d8s": {
+          "strength": 5442,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "check": 0.9916,
+            "bet 50": 0.0082,
+            "bet 100": 0.0002
+          }
+        },
+        "8h8s": {
+          "strength": 5442,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "check": 0.9704,
+            "bet 50": 0.0082,
+            "bet 100": 0.0215
+          }
+        },
+        "7c7d": {
+          "strength": 5376,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "check": 0.8138,
+            "bet 50": 0.0071,
+            "bet 100": 0.1792
+          }
+        },
+        "7c7s": {
+          "strength": 5376,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "check": 0.7106,
+            "bet 50": 0.0106,
+            "bet 100": 0.2788
+          }
+        },
+        "7d7s": {
+          "strength": 5376,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "check": 0.9864,
+            "bet 50": 0.0133,
+            "bet 100": 0.0002
+          }
+        }
+      },
+      "check/bet 50": {
+        "AcAd": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.4199,
+            "call": 0.2718,
+            "raise 100": 0.3082
+          }
+        },
+        "AcAh": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.3204,
+            "call": 0.4581,
+            "raise 100": 0.2216
+          }
+        },
+        "AcAs": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.8219,
+            "call": 0.153,
+            "raise 100": 0.0251
+          }
+        },
+        "AdAh": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.4906,
+            "call": 0.443,
+            "raise 100": 0.0664
+          }
+        },
+        "AdAs": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.3713,
+            "call": 0.5546,
+            "raise 100": 0.0741
+          }
+        },
+        "AhAs": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.1399,
+            "call": 0.7749,
+            "raise 100": 0.0852
+          }
+        },
+        "KcKd": {
+          "strength": 5742,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0,
+            "call": 0.0,
+            "raise 100": 0.9999
+          }
+        },
+        "KcKh": {
+          "strength": 5742,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0,
+            "call": 0.0,
+            "raise 100": 0.9999
+          }
+        },
+        "KdKh": {
+          "strength": 5742,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0,
+            "call": 0.0001,
+            "raise 100": 0.9999
+          }
+        },
+        "AcKc": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.789,
+            "call": 0.0407,
+            "raise 100": 0.1703
+          }
+        },
+        "AcKd": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.517,
+            "call": 0.2936,
+            "raise 100": 0.1893
+          }
+        },
+        "AcKh": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.4574,
+            "call": 0.4017,
+            "raise 100": 0.1409
+          }
+        },
+        "AdKc": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.6493,
+            "call": 0.3009,
+            "raise 100": 0.0498
+          }
+        },
+        "AdKd": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.427,
+            "call": 0.5153,
+            "raise 100": 0.0577
+          }
+        },
+        "AdKh": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.4303,
+            "call": 0.5232,
+            "raise 100": 0.0465
+          }
+        },
+        "AhKc": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.3256,
+            "call": 0.6413,
+            "raise 100": 0.0331
+          }
+        },
+        "AhKd": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.2837,
+            "call": 0.6789,
+            "raise 100": 0.0374
+          }
+        },
+        "AhKh": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.3071,
+            "call": 0.6624,
+            "raise 100": 0.0305
+          }
+        },
+        "AsKc": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5779,
+            "call": 0.4093,
+            "raise 100": 0.0129
+          }
+        },
+        "AsKd": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.382,
+            "call": 0.5941,
+            "raise 100": 0.0239
+          }
+        },
+        "AsKh": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.385,
+            "call": 0.5915,
+            "raise 100": 0.0235
+          }
+        },
+        "8d8h": {
+          "strength": 5442,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0,
+            "call": 0.0001,
+            "raise 100": 0.9999
+          }
+        },
+        "8d8s": {
+          "strength": 5442,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0,
+            "call": 0.5,
+            "raise 100": 0.5
+          }
+        },
+        "8h8s": {
+          "strength": 5442,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0,
+            "call": 0.0008,
+            "raise 100": 0.9992
+          }
+        },
+        "7c7d": {
+          "strength": 5376,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0,
+            "call": 0.0001,
+            "raise 100": 0.9999
+          }
+        },
+        "7c7s": {
+          "strength": 5376,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0,
+            "call": 0.0022,
+            "raise 100": 0.9978
+          }
+        },
+        "7d7s": {
+          "strength": 5376,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0,
+            "call": 0.5,
+            "raise 100": 0.5
+          }
+        }
+      },
+      "check/bet 100": {
+        "AcAd": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.3804,
+            "call": 0.157,
+            "raise 100": 0.4626
+          }
+        },
+        "AcAh": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.4789,
+            "call": 0.1816,
+            "raise 100": 0.3395
+          }
+        },
+        "AcAs": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 1.0,
+            "call": 0.0,
+            "raise 100": 0.0
+          }
+        },
+        "AdAh": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9994,
+            "call": 0.0006,
+            "raise 100": 0.0
+          }
+        },
+        "AdAs": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9965,
+            "call": 0.0035,
+            "raise 100": 0.0
+          }
+        },
+        "AhAs": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9971,
+            "call": 0.0029,
+            "raise 100": 0.0
+          }
+        },
+        "KcKd": {
+          "strength": 5742,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0,
+            "call": 0.0,
+            "raise 100": 1.0
+          }
+        },
+        "KcKh": {
+          "strength": 5742,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0,
+            "call": 0.0,
+            "raise 100": 0.9999
+          }
+        },
+        "KdKh": {
+          "strength": 5742,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0001,
+            "call": 0.0001,
+            "raise 100": 0.9999
+          }
+        },
+        "AcKc": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9998,
+            "call": 0.0002,
+            "raise 100": 0.0
+          }
+        },
+        "AcKd": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9998,
+            "call": 0.0001,
+            "raise 100": 0.0001
+          }
+        },
+        "AcKh": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9998,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "AdKc": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.7573,
+            "call": 0.2426,
+            "raise 100": 0.0001
+          }
+        },
+        "AdKd": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.4871,
+            "call": 0.5128,
+            "raise 100": 0.0001
+          }
+        },
+        "AdKh": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.4239,
+            "call": 0.5761,
+            "raise 100": 0.0001
+          }
+        },
+        "AhKc": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.4066,
+            "call": 0.5934,
+            "raise 100": 0.0001
+          }
+        },
+        "AhKd": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.4065,
+            "call": 0.5935,
+            "raise 100": 0.0001
+          }
+        },
+        "AhKh": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.4473,
+            "call": 0.5526,
+            "raise 100": 0.0001
+          }
+        },
+        "AsKc": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.4709,
+            "call": 0.529,
+            "raise 100": 0.0001
+          }
+        },
+        "AsKd": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.504,
+            "call": 0.4959,
+            "raise 100": 0.0001
+          }
+        },
+        "AsKh": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5555,
+            "call": 0.4444,
+            "raise 100": 0.0001
+          }
+        },
+        "8d8h": {
+          "strength": 5442,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0001,
+            "call": 0.0001,
+            "raise 100": 0.9998
+          }
+        },
+        "8d8s": {
+          "strength": 5442,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0001,
+            "call": 0.5,
+            "raise 100": 0.5
+          }
+        },
+        "8h8s": {
+          "strength": 5442,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0001,
+            "call": 0.0001,
+            "raise 100": 0.9999
+          }
+        },
+        "7c7d": {
+          "strength": 5376,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0021,
+            "call": 0.0021,
+            "raise 100": 0.9957
+          }
+        },
+        "7c7s": {
+          "strength": 5376,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0001,
+            "call": 0.0001,
+            "raise 100": 0.9998
+          }
+        },
+        "7d7s": {
+          "strength": 5376,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0001,
+            "call": 0.5,
+            "raise 100": 0.5
+          }
+        }
+      },
+      "bet 50/raise 100": {
+        "AcAd": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "AcAh": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "AcAs": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.0024,
+            "call": 0.9976
+          }
+        },
+        "AdAh": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.8804,
+            "call": 0.1196
+          }
+        },
+        "AdAs": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.934,
+            "call": 0.066
+          }
+        },
+        "AhAs": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.827,
+            "call": 0.173
+          }
+        },
+        "KcKd": {
+          "strength": 5742,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0425,
+            "call": 0.9575
+          }
+        },
+        "KcKh": {
+          "strength": 5742,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0008,
+            "call": 0.9992
+          }
+        },
+        "KdKh": {
+          "strength": 5742,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0038,
+            "call": 0.9962
+          }
+        },
+        "AcKc": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.978,
+            "call": 0.022
+          }
+        },
+        "AcKd": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9879,
+            "call": 0.0121
+          }
+        },
+        "AcKh": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9979,
+            "call": 0.0021
+          }
+        },
+        "AdKc": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9788,
+            "call": 0.0212
+          }
+        },
+        "AdKd": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9313,
+            "call": 0.0687
+          }
+        },
+        "AdKh": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.8638,
+            "call": 0.1362
+          }
+        },
+        "AhKc": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5417,
+            "call": 0.4583
+          }
+        },
+        "AhKd": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.854,
+            "call": 0.146
+          }
+        },
+        "AhKh": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.7159,
+            "call": 0.2841
+          }
+        },
+        "AsKc": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9062,
+            "call": 0.0938
+          }
+        },
+        "AsKd": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9769,
+            "call": 0.0231
+          }
+        },
+        "AsKh": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9653,
+            "call": 0.0347
+          }
+        },
+        "8d8h": {
+          "strength": 5442,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0139,
+            "call": 0.9861
+          }
+        },
+        "8d8s": {
+          "strength": 5442,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0115,
+            "call": 0.9885
+          }
+        },
+        "8h8s": {
+          "strength": 5442,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0111,
+            "call": 0.9889
+          }
+        },
+        "7c7d": {
+          "strength": 5376,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.014,
+            "call": 0.986
+          }
+        },
+        "7c7s": {
+          "strength": 5376,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0093,
+            "call": 0.9907
+          }
+        },
+        "7d7s": {
+          "strength": 5376,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0077,
+            "call": 0.9923
+          }
+        }
+      },
+      "bet 100/raise 100": {
+        "AcAd": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.0001,
+            "call": 0.9999
+          }
+        },
+        "AcAh": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9998,
+            "call": 0.0002
+          }
+        },
+        "AcAs": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "AdAh": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9989,
+            "call": 0.0011
+          }
+        },
+        "AdAs": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9856,
+            "call": 0.0144
+          }
+        },
+        "AhAs": {
+          "strength": 4103,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9879,
+            "call": 0.0121
+          }
+        },
+        "KcKd": {
+          "strength": 5742,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0002,
+            "call": 0.9998
+          }
+        },
+        "KcKh": {
+          "strength": 5742,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0003,
+            "call": 0.9997
+          }
+        },
+        "KdKh": {
+          "strength": 5742,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0001,
+            "call": 0.9999
+          }
+        },
+        "AcKc": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9098,
+            "call": 0.0902
+          }
+        },
+        "AcKd": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9973,
+            "call": 0.0027
+          }
+        },
+        "AcKh": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9959,
+            "call": 0.0041
+          }
+        },
+        "AdKc": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9984,
+            "call": 0.0016
+          }
+        },
+        "AdKd": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9991,
+            "call": 0.0009
+          }
+        },
+        "AdKh": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.999,
+            "call": 0.001
+          }
+        },
+        "AhKc": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9986,
+            "call": 0.0014
+          }
+        },
+        "AhKd": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.999,
+            "call": 0.001
+          }
+        },
+        "AhKh": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.999,
+            "call": 0.001
+          }
+        },
+        "AsKc": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.998,
+            "call": 0.002
+          }
+        },
+        "AsKd": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.999,
+            "call": 0.001
+          }
+        },
+        "AsKh": {
+          "strength": 3883,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9989,
+            "call": 0.0011
+          }
+        },
+        "8d8h": {
+          "strength": 5442,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0334,
+            "call": 0.9666
+          }
+        },
+        "8d8s": {
+          "strength": 5442,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "8h8s": {
+          "strength": 5442,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0042,
+            "call": 0.9958
+          }
+        },
+        "7c7d": {
+          "strength": 5376,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0005,
+            "call": 0.9995
+          }
+        },
+        "7c7s": {
+          "strength": 5376,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.0004,
+            "call": 0.9996
+          }
+        },
+        "7d7s": {
+          "strength": 5376,
+          "hand_class": "Three of a Kind",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        }
+      }
+    },
+    "IP": {
+      "check": {
+        "KcQc": {
+          "strength": 3838,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9605,
+            "bet 50": 0.0395,
+            "bet 100": 0.0
+          }
+        },
+        "KdQd": {
+          "strength": 3838,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9814,
+            "bet 50": 0.0186,
+            "bet 100": 0.0
+          }
+        },
+        "KhQh": {
+          "strength": 3838,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9791,
+            "bet 50": 0.0209,
+            "bet 100": 0.0
+          }
+        },
+        "KcJc": {
+          "strength": 3802,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9999,
+            "bet 50": 0.0,
+            "bet 100": 0.0
+          }
+        },
+        "KdJd": {
+          "strength": 3802,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9997,
+            "bet 50": 0.0003,
+            "bet 100": 0.0
+          }
+        },
+        "KhJh": {
+          "strength": 3802,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9995,
+            "bet 50": 0.0005,
+            "bet 100": 0.0
+          }
+        },
+        "9c9d": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 1.0,
+            "bet 50": 0.0,
+            "bet 100": 0.0
+          }
+        },
+        "9c9h": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 1.0,
+            "bet 50": 0.0,
+            "bet 100": 0.0
+          }
+        },
+        "9c9s": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 1.0,
+            "bet 50": 0.0,
+            "bet 100": 0.0
+          }
+        },
+        "9d9h": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 1.0,
+            "bet 50": 0.0,
+            "bet 100": 0.0
+          }
+        },
+        "9d9s": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 1.0,
+            "bet 50": 0.0,
+            "bet 100": 0.0
+          }
+        },
+        "9h9s": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 1.0,
+            "bet 50": 0.0,
+            "bet 100": 0.0
+          }
+        },
+        "8d7d": {
+          "strength": 4367,
+          "hand_class": "Two Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.6591,
+            "bet 50": 0.3297,
+            "bet 100": 0.0111
+          }
+        },
+        "8s7s": {
+          "strength": 4367,
+          "hand_class": "Two Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.6683,
+            "bet 50": 0.3251,
+            "bet 100": 0.0066
+          }
+        },
+        "Ac7c": {
+          "strength": 2593,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9934,
+            "bet 50": 0.0011,
+            "bet 100": 0.0055
+          }
+        },
+        "Ad7d": {
+          "strength": 2593,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9925,
+            "bet 50": 0.0075,
+            "bet 100": 0.0
+          }
+        },
+        "As7s": {
+          "strength": 2593,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "check": 0.9924,
+            "bet 50": 0.0076,
+            "bet 100": 0.0001
+          }
+        },
+        "QcJc": {
+          "strength": 770,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "check": 0.9076,
+            "bet 50": 0.0917,
+            "bet 100": 0.0006
+          }
+        },
+        "QdJd": {
+          "strength": 770,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "check": 0.9697,
+            "bet 50": 0.03,
+            "bet 100": 0.0003
+          }
+        },
+        "QhJh": {
+          "strength": 770,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "check": 0.9831,
+            "bet 50": 0.0167,
+            "bet 100": 0.0001
+          }
+        },
+        "QsJs": {
+          "strength": 770,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "check": 0.9933,
+            "bet 50": 0.0067,
+            "bet 100": 0.0001
+          }
+        },
+        "Tc9c": {
+          "strength": 581,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "check": 0.9974,
+            "bet 50": 0.0025,
+            "bet 100": 0.0
+          }
+        },
+        "Td9d": {
+          "strength": 581,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "check": 0.9986,
+            "bet 50": 0.0014,
+            "bet 100": 0.0
+          }
+        },
+        "Th9h": {
+          "strength": 581,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "check": 0.9991,
+            "bet 50": 0.0009,
+            "bet 100": 0.0
+          }
+        },
+        "Ts9s": {
+          "strength": 581,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "check": 0.9995,
+            "bet 50": 0.0005,
+            "bet 100": 0.0
+          }
+        }
+      },
+      "check/bet 50/raise 100": {
+        "KcQc": {
+          "strength": 3838,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9998,
+            "call": 0.0002
+          }
+        },
+        "KdQd": {
+          "strength": 3838,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9991,
+            "call": 0.0009
+          }
+        },
+        "KhQh": {
+          "strength": 3838,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9992,
+            "call": 0.0008
+          }
+        },
+        "KcJc": {
+          "strength": 3802,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "KdJd": {
+          "strength": 3802,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9478,
+            "call": 0.0522
+          }
+        },
+        "KhJh": {
+          "strength": 3802,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.968,
+            "call": 0.032
+          }
+        },
+        "9c9d": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "9c9h": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "9c9s": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "9d9h": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "9d9s": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "9h9s": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "8d7d": {
+          "strength": 4367,
+          "hand_class": "Two Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.3288,
+            "call": 0.6712
+          }
+        },
+        "8s7s": {
+          "strength": 4367,
+          "hand_class": "Two Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.6232,
+            "call": 0.3768
+          }
+        },
+        "Ac7c": {
+          "strength": 2593,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9921,
+            "call": 0.0079
+          }
+        },
+        "Ad7d": {
+          "strength": 2593,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9988,
+            "call": 0.0012
+          }
+        },
+        "As7s": {
+          "strength": 2593,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9977,
+            "call": 0.0023
+          }
+        },
+        "QcJc": {
+          "strength": 770,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001
+          }
+        },
+        "QdJd": {
+          "strength": 770,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9996,
+            "call": 0.0004
+          }
+        },
+        "QhJh": {
+          "strength": 770,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9993,
+            "call": 0.0007
+          }
+        },
+        "QsJs": {
+          "strength": 770,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9981,
+            "call": 0.0019
+          }
+        },
+        "Tc9c": {
+          "strength": 581,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9951,
+            "call": 0.0049
+          }
+        },
+        "Td9d": {
+          "strength": 581,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9912,
+            "call": 0.0088
+          }
+        },
+        "Th9h": {
+          "strength": 581,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9858,
+            "call": 0.0142
+          }
+        },
+        "Ts9s": {
+          "strength": 581,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9747,
+            "call": 0.0253
+          }
+        }
+      },
+      "check/bet 100/raise 100": {
+        "KcQc": {
+          "strength": 3838,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "KdQd": {
+          "strength": 3838,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "KhQh": {
+          "strength": 3838,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "KcJc": {
+          "strength": 3802,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "KdJd": {
+          "strength": 3802,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "KhJh": {
+          "strength": 3802,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "9c9d": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "9c9h": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "9c9s": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "9d9h": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "9d9s": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "9h9s": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "8d7d": {
+          "strength": 4367,
+          "hand_class": "Two Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.1064,
+            "call": 0.8936
+          }
+        },
+        "8s7s": {
+          "strength": 4367,
+          "hand_class": "Two Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.6163,
+            "call": 0.3837
+          }
+        },
+        "Ac7c": {
+          "strength": 2593,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.984,
+            "call": 0.016
+          }
+        },
+        "Ad7d": {
+          "strength": 2593,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "As7s": {
+          "strength": 2593,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.6764,
+            "call": 0.3236
+          }
+        },
+        "QcJc": {
+          "strength": 770,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9807,
+            "call": 0.0193
+          }
+        },
+        "QdJd": {
+          "strength": 770,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9531,
+            "call": 0.0469
+          }
+        },
+        "QhJh": {
+          "strength": 770,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9096,
+            "call": 0.0904
+          }
+        },
+        "QsJs": {
+          "strength": 770,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.7746,
+            "call": 0.2254
+          }
+        },
+        "Tc9c": {
+          "strength": 581,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.5708,
+            "call": 0.4292
+          }
+        },
+        "Td9d": {
+          "strength": 581,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.5368,
+            "call": 0.4632
+          }
+        },
+        "Th9h": {
+          "strength": 581,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        },
+        "Ts9s": {
+          "strength": 581,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.5,
+            "call": 0.5
+          }
+        }
+      },
+      "bet 50": {
+        "KcQc": {
+          "strength": 3838,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 1.0,
+            "call": 0.0,
+            "raise 100": 0.0
+          }
+        },
+        "KdQd": {
+          "strength": 3838,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0,
+            "raise 100": 0.0
+          }
+        },
+        "KhQh": {
+          "strength": 3838,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9998,
+            "call": 0.0001,
+            "raise 100": 0.0001
+          }
+        },
+        "KcJc": {
+          "strength": 3802,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0001
+          }
+        },
+        "KdJd": {
+          "strength": 3802,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "KhJh": {
+          "strength": 3802,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "9c9d": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "9c9h": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "9c9s": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "9d9h": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "9d9s": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "9h9s": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "8d7d": {
+          "strength": 4367,
+          "hand_class": "Two Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.0592,
+            "call": 0.9136,
+            "raise 100": 0.0272
+          }
+        },
+        "8s7s": {
+          "strength": 4367,
+          "hand_class": "Two Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.0563,
+            "call": 0.9395,
+            "raise 100": 0.0041
+          }
+        },
+        "Ac7c": {
+          "strength": 2593,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9972,
+            "call": 0.0,
+            "raise 100": 0.0028
+          }
+        },
+        "Ad7d": {
+          "strength": 2593,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "As7s": {
+          "strength": 2593,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9995,
+            "call": 0.0001,
+            "raise 100": 0.0004
+          }
+        },
+        "QcJc": {
+          "strength": 770,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "QdJd": {
+          "strength": 770,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "QhJh": {
+          "strength": 770,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "QsJs": {
+          "strength": 770,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "Tc9c": {
+          "strength": 581,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "Td9d": {
+          "strength": 581,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "Th9h": {
+          "strength": 581,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "Ts9s": {
+          "strength": 581,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        }
+      },
+      "bet 100": {
+        "KcQc": {
+          "strength": 3838,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 1.0,
+            "call": 0.0,
+            "raise 100": 0.0
+          }
+        },
+        "KdQd": {
+          "strength": 3838,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0,
+            "raise 100": 0.0
+          }
+        },
+        "KhQh": {
+          "strength": 3838,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0,
+            "raise 100": 0.0
+          }
+        },
+        "KcJc": {
+          "strength": 3802,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0,
+            "raise 100": 0.0
+          }
+        },
+        "KdJd": {
+          "strength": 3802,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "KhJh": {
+          "strength": 3802,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "9c9d": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "9c9h": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "9c9s": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "9d9h": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "9d9s": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "9h9s": {
+          "strength": 2958,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "8d7d": {
+          "strength": 4367,
+          "hand_class": "Two Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.3173,
+            "call": 0.6734,
+            "raise 100": 0.0093
+          }
+        },
+        "8s7s": {
+          "strength": 4367,
+          "hand_class": "Two Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.5056,
+            "call": 0.4929,
+            "raise 100": 0.0015
+          }
+        },
+        "Ac7c": {
+          "strength": 2593,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9998,
+            "call": 0.0,
+            "raise 100": 0.0002
+          }
+        },
+        "Ad7d": {
+          "strength": 2593,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9998,
+            "call": 0.0001,
+            "raise 100": 0.0001
+          }
+        },
+        "As7s": {
+          "strength": 2593,
+          "hand_class": "Pair",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0001,
+            "raise 100": 0.0
+          }
+        },
+        "QcJc": {
+          "strength": 770,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0,
+            "raise 100": 0.0
+          }
+        },
+        "QdJd": {
+          "strength": 770,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0,
+            "raise 100": 0.0
+          }
+        },
+        "QhJh": {
+          "strength": 770,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0,
+            "raise 100": 0.0
+          }
+        },
+        "QsJs": {
+          "strength": 770,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0,
+            "raise 100": 0.0
+          }
+        },
+        "Tc9c": {
+          "strength": 581,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0,
+            "raise 100": 0.0
+          }
+        },
+        "Td9d": {
+          "strength": 581,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0,
+            "raise 100": 0.0
+          }
+        },
+        "Th9h": {
+          "strength": 581,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0,
+            "raise 100": 0.0
+          }
+        },
+        "Ts9s": {
+          "strength": 581,
+          "hand_class": "High Card",
+          "reached": true,
+          "actions": {
+            "fold": 0.9999,
+            "call": 0.0,
+            "raise 100": 0.0
+          }
+        }
+      }
+    }
+  }
+}
