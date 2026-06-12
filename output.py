@@ -48,8 +48,8 @@ def print_strategy_tables(trainer: CFRTrainer):
         print()
 
 
-def export_json(trainer: CFRTrainer, pot: float, path: str):
-    """Write the solved strategies to JSON for downstream apps.
+def strategy_dict(trainer: CFRTrainer, pot: float) -> dict:
+    """Build the solved-strategy payload as a plain dict (JSON-ready).
 
     Shape:
       strategies[player][history][combo] = {
@@ -80,8 +80,8 @@ def export_json(trainer: CFRTrainer, pot: float, path: str):
             }
         strategies[PLAYER_NAMES[player]][history_key] = table
 
-    data = {
-        "board": board,
+    return {
+        "board": list(board),
         "pot": pot,
         "iterations": trainer.iterations_run,
         "expected_pot_share": {"OOP": round(ev[0], 2), "IP": round(ev[1], 2)},
@@ -91,5 +91,9 @@ def export_json(trainer: CFRTrainer, pot: float, path: str):
         },
         "strategies": strategies,
     }
+
+
+def export_json(trainer: CFRTrainer, pot: float, path: str):
+    """Write a single solved scenario to a JSON file (see strategy_dict)."""
     with open(path, "w") as f:
-        json.dump(data, f, indent=2)
+        json.dump(strategy_dict(trainer, pot), f, indent=2)

@@ -1,4 +1,7 @@
-"""Solve the river scenario defined in scenario.py and print/export the result.
+"""Solve a single river scenario and print/export the result.
+
+By default this solves DEFAULT_SCENARIO from scenario.py. To solve many spots
+in one go (for the FELT training app), use precompute.py instead.
 
 Usage:
     python main.py [--iterations N] [--out strategy.json]
@@ -7,10 +10,10 @@ Usage:
 import argparse
 import time
 
-import scenario
-from cfr import CFRTrainer
-from game_tree import IP, OOP, build_tree
+from game_tree import IP, OOP
 from output import export_json, print_strategy_tables
+from scenario import DEFAULT_SCENARIO, expand_range
+from solver import solve
 
 
 def main():
@@ -19,33 +22,26 @@ def main():
     parser.add_argument("--out", default="strategy.json")
     args = parser.parse_args()
 
-    oop_range = scenario.expand_range(scenario.OOP_RANGE_SPEC, scenario.BOARD)
-    ip_range = scenario.expand_range(scenario.IP_RANGE_SPEC, scenario.BOARD)
+    scenario = DEFAULT_SCENARIO
+    oop_range = expand_range(scenario.oop_range, scenario.board)
+    ip_range = expand_range(scenario.ip_range, scenario.board)
 
-    root = build_tree(
-        pot=scenario.POT,
-        bet_fractions=scenario.BET_FRACTIONS,
-        raise_fractions=scenario.RAISE_FRACTIONS,
-        max_raises=scenario.MAX_RAISES,
-    )
-    trainer = CFRTrainer(root, scenario.BOARD, oop_range, ip_range)
-
+    print(f"Scenario: {scenario.name}")
     print(f"OOP range: {len(oop_range)} combos | IP range: {len(ip_range)} combos")
-    print(f"Deals to traverse per iteration: {len(trainer.deals)}")
     print(f"Running {args.iterations} iterations of vanilla CFR...")
 
     start = time.perf_counter()
-    trainer.train(args.iterations, progress_every=max(1, args.iterations // 10))
+    trainer = solve(scenario, args.iterations, progress_every=max(1, args.iterations // 10))
     elapsed = time.perf_counter() - start
     print(f"Done in {elapsed:.1f}s")
 
     print_strategy_tables(trainer)
 
     ev = trainer.expected_game_value()
-    print(f"Expected pot share (pot = {scenario.POT:g}):")
+    print(f"Expected pot share (pot = {scenario.pot:g}):")
     print(f"  OOP: {ev[OOP]:.2f}   IP: {ev[IP]:.2f}")
 
-    export_json(trainer, scenario.POT, args.out)
+    export_json(trainer, scenario.pot, args.out)
     print(f"\nStrategies exported to {args.out}")
 
 
