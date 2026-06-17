@@ -8,7 +8,7 @@ their average-strategy action frequencies, sorted strongest hand first.
 import json
 
 from cfr import CFRTrainer, combo_name
-from evaluator import hand_class, hand_strength
+from evaluator import hand_class, hand_strength, semantic_strength
 from game_tree import PLAYER_NAMES, decision_nodes
 
 
@@ -75,6 +75,7 @@ def strategy_dict(trainer: CFRTrainer, pot: float) -> dict:
             table[combo_name(combo)] = {
                 "strength": hand_strength(list(combo), board),
                 "hand_class": hand_class(list(combo), board),
+                "semantic_strength": semantic_strength(list(combo), board),
                 "reached": reached,
                 "actions": {a: round(f, 4) for a, f in zip(node.actions, strategy)},
             }

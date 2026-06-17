@@ -36,6 +36,11 @@ class Scenario:
     raise_fractions: tuple[float, ...] = (1.0,)
     max_raises: int = 1
     description: str = ""
+    # Semantic hand strengths the lesson is built around (see
+    # evaluator.semantic_strength). FELT filters the combos it deals to these
+    # so the quiz always matches the spot concept. "bluff" is accepted as an
+    # alias for "high_card". Empty means "deal any combo".
+    featured_hand_strength: tuple[str, ...] = ()
 
 
 # The spot the solver was originally built around: a tight value-heavy OOP
