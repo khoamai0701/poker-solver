@@ -41,6 +41,11 @@ class Scenario:
     # so the quiz always matches the spot concept. "bluff" is accepted as an
     # alias for "high_card". Empty means "deal any combo".
     featured_hand_strength: tuple[str, ...] = ()
+    # Short concept label shown as a pill after the user answers (e.g. "Thin Value").
+    concept: str = ""
+    # Two-to-three sentence textbook explanation of the concept shown in the
+    # mistake-review "Read More" section. No hand-specific analysis.
+    read_more: str = ""
 
 
 # The spot the solver was originally built around: a tight value-heavy OOP

@@ -62,6 +62,61 @@ FEATURED_ALIASES = {"bluff": "high_card"}
 def _resolve_featured(label: str) -> str:
     return FEATURED_ALIASES.get(label, label)
 
+
+# Textbook "Read More" blurbs keyed by concept name. Each spot references one
+# of these so the text stays consistent and is written in one place.
+_READ_MORE = {
+    "Range Advantage": (
+        "Range advantage means your hand distribution is stronger than your opponent's on a "
+        "specific board, giving you more strong hands relative to your overall range. "
+        "Solvers exploit this by betting frequently and at larger sizes, since the opponent "
+        "must defend a wide value range, not just the nuts. "
+        "Failing to press range advantage — by checking too often or sizing too small — "
+        "leaves significant EV on the table."
+    ),
+    "Kicker Battle": (
+        "A kicker battle occurs when both players hold the same hand category and the winner "
+        "is decided solely by the unpaired hole card. "
+        "Solvers bet thin in these spots because the opponent's calling range holds the same "
+        "category but weaker kickers, but sizing must stay small to avoid inflating the pot "
+        "against the rare dominating hand. "
+        "These are among the most common thin-value situations on ace-high or paired boards."
+    ),
+    "Thin Value": (
+        "Thin value betting means betting a hand that is only a small favorite against the "
+        "opponent's calling range. "
+        "The bet extracts chips from slightly worse hands that still call, while accepting "
+        "the occasional loss to a better hand in villain's range. "
+        "Sizing down is critical: a large bet for thin value folds out the weaker holdings "
+        "you need to pay you off, turning a profitable spot into a break-even or losing one."
+    ),
+    "Polarization": (
+        "A polarized betting range contains strong value hands and bluffs with few "
+        "medium-strength holdings in between. "
+        "Betting a polarized range forces the opponent into a binary decision — value or "
+        "bluff — rather than letting them call comfortably with medium-strength hands. "
+        "The bluff frequency in a balanced polarized range is set so the opponent is "
+        "indifferent to calling: the bluff-to-value ratio mirrors the pot odds offered."
+    ),
+    "Nut Advantage": (
+        "Nut advantage means holding a disproportionate share of the strongest possible "
+        "hands on a given board. "
+        "A player with nut advantage can bet large and frequently because even when called "
+        "by strong hands, the opponent cannot raise without maximum exposure to the nuts. "
+        "This advantage is most pronounced on flush and paired boards, where one player's "
+        "range connects far more strongly with the runout."
+    ),
+    "Bluff Catching": (
+        "Bluff catching means calling down with a hand that loses to all value bets but "
+        "beats all bluffs. "
+        "The decision is driven by pot odds and the estimated frequency villain bluffs: if "
+        "villain bluffs more often than the break-even frequency implied by the pot odds, "
+        "calling is profitable regardless of hand strength. "
+        "Bluff catchers should rarely raise, because raising prices out the bluffs you're "
+        "trying to capture and only gets called by better."
+    ),
+}
+
 # A spot is dropped if the weaker player's expected pot share falls below this
 # fraction of the pot. Below ~3% the dominated range is folding almost always,
 # so there is no genuine decision left to teach.
@@ -112,10 +167,7 @@ def board_quality_violations(board) -> list[str]:
 
 
 # ---------------------------------------------------------------------------
-# The curated lesson spots, grouped by texture / concept. Boards are 5 cards;
-# ranges use the shorthand from scenario.py ("AA", "AKs", "AKo", "AK", or
-# explicit combos like "AsQs"). Each description names the hero hand and the
-# line so the lesson is self-explanatory in FELT.
+# The curated lesson spots, grouped by texture / concept.
 # ---------------------------------------------------------------------------
 
 # --- Dry, disconnected boards (single-raised pots). -------------------------
@@ -127,6 +179,8 @@ DRY = [
         oop_range=("AA", "KK", "AK", "88", "77"),
         ip_range=("KQs", "KJs", "99", "87s", "A7s", "QJs", "T9s"),
         bet_fractions=(0.5, 1.0),
+        concept="Range Advantage",
+        read_more=_READ_MORE["Range Advantage"],
         description=(
             "Your range dominates villain's bluff-catching range on this dry king-high board — "
             "sets, overpairs, and top pairs all sit ahead of villain's capped holdings. "
@@ -141,6 +195,8 @@ DRY = [
         oop_range=("AQs", "AJs", "ATs", "KQs", "77", "44"),
         ip_range=("KK", "22", "A9s", "A8s", "QQ", "JJ", "KJs"),
         bet_fractions=(0.5, 1.0),
+        concept="Kicker Battle",
+        read_more=_READ_MORE["Kicker Battle"],
         description=(
             "Both you and villain hold aces here, so the kicker determines who wins. "
             "Bet small for thin value — you're ahead of weaker aces, but keep the size down "
@@ -154,6 +210,8 @@ DRY = [
         oop_range=("QJs", "AQs", "JJ", "33", "Kh9h", "T9s"),
         ip_range=("QTs", "Q9s", "77", "AJs", "KJs", "A5s"),
         bet_fractions=(0.5, 1.0),
+        concept="Polarization",
+        read_more=_READ_MORE["Polarization"],
         description=(
             "Your two pair or set is the clear value hand on this disconnected board, "
             "and missed straight draws become natural bluffs with no showdown value. "
@@ -168,6 +226,8 @@ DRY = [
         oop_range=("KQs", "AKs", "55", "AhJh", "Th9h", "QJs"),
         ip_range=("KJs", "KTs", "QJs", "77", "A5s", "JhTh"),
         bet_fractions=(0.5, 1.0),
+        concept="Polarization",
+        read_more=_READ_MORE["Polarization"],
         description=(
             "Your range holds a nut advantage on this dry broadway board — "
             "top two pair and sets sit ahead of villain's weaker kings and second pair. "
@@ -182,6 +242,8 @@ DRY = [
         oop_range=("JTs", "AJs", "99", "44", "KhQh", "Ah5h"),
         ip_range=("J9s", "QJs", "66", "88", "T9s", "A6s"),
         bet_fractions=(0.5,),
+        concept="Thin Value",
+        read_more=_READ_MORE["Thin Value"],
         description=(
             "Top pair is a thin value hand on this low board, but villain's weaker jacks "
             "and underpairs will call a small bet and fold to a large one. "
@@ -195,6 +257,8 @@ DRY = [
         oop_range=("TT", "55", "ATs", "KhQh", "Ah9h", "QJs"),
         ip_range=("T9s", "T8s", "77", "33", "A5s", "JhQh"),
         bet_fractions=(0.5, 1.0),
+        concept="Thin Value",
+        read_more=_READ_MORE["Thin Value"],
         description=(
             "Your set is the dominant value hand on this ten-high board — "
             "well ahead of villain's weaker tens and pairs. "
@@ -209,6 +273,8 @@ DRY = [
         oop_range=("A7s", "A5s", "99", "33", "KQs", "QJs"),
         ip_range=("ATs", "A9s", "88", "KhJh", "QhTh", "77"),
         bet_fractions=(0.5,),
+        concept="Thin Value",
+        read_more=_READ_MORE["Thin Value"],
         description=(
             "You hold a weak top pair on an ace-high board where villain's range "
             "includes stronger aces. "
@@ -227,6 +293,8 @@ PAIRED = [
         oop_range=("AKs", "AQs", "77", "KhQh", "JhTh", "KhJh"),
         ip_range=("AJs", "ATs", "22", "99", "A5s", "KQs"),
         bet_fractions=(0.5, 1.0),
+        concept="Kicker Battle",
+        read_more=_READ_MORE["Kicker Battle"],
         description=(
             "On a paired-aces board, everyone has trip aces — "
             "the pot goes to the better kicker or full house. "
@@ -241,6 +309,8 @@ PAIRED = [
         oop_range=("KK", "AA", "66", "QhJh", "AhTh", "QQ"),
         ip_range=("K9s", "KJs", "99", "A6s", "55", "JTs"),
         bet_fractions=(0.5, 1.0),
+        concept="Nut Advantage",
+        read_more=_READ_MORE["Nut Advantage"],
         description=(
             "Your full house completely dominates villain's one-pair range "
             "on this paired-six board. "
@@ -255,6 +325,8 @@ PAIRED = [
         oop_range=("KQs", "99", "AhQh", "JhTh", "QhJh", "AhJh"),
         ip_range=("KJs", "KTs", "QQ", "A9s", "JJ", "TT"),
         bet_fractions=(0.33, 1.0),
+        concept="Thin Value",
+        read_more=_READ_MORE["Thin Value"],
         description=(
             "Your trip kings are ahead of every pocket pair villain holds — "
             "they're all underpairs to the board pair. "
@@ -269,6 +341,8 @@ PAIRED = [
         oop_range=("AKs", "AQs", "55", "88", "AA"),
         ip_range=("98s", "T8s", "A8s", "TT", "99", "A7s", "KQs"),
         bet_fractions=(0.5, 1.0),
+        concept="Polarization",
+        read_more=_READ_MORE["Polarization"],
         description=(
             "The river pairing the eight reshuffled the hand rankings — "
             "full houses and quads jumped to the top, making formerly strong hands "
@@ -283,6 +357,8 @@ PAIRED = [
         oop_range=("AhKh", "AQs", "QQ", "KhJh", "Th8h", "99"),
         ip_range=("KQs", "Q9s", "JJ", "A5s", "TT", "JhTh"),
         bet_fractions=(0.33, 1.0),
+        concept="Kicker Battle",
+        read_more=_READ_MORE["Kicker Battle"],
         description=(
             "When the board shows trips, everyone holds at least trip fours — "
             "the pot goes to the best kicker or full house. "
@@ -298,6 +374,8 @@ PAIRED = [
         ip_range=("QJs", "Q9s", "TT", "A5s", "KQs", "99"),
         pot=200.0,
         bet_fractions=(0.5, 1.0),
+        concept="Nut Advantage",
+        read_more=_READ_MORE["Nut Advantage"],
         description=(
             "In this bloated 3-bet pot, your jacks full is a premium hand, "
             "but villain's slow-played trip queens lurk in the calling range. "
@@ -316,6 +394,8 @@ TWO_TONE = [
         oop_range=("AQs", "AcKc", "QJs", "88", "KdJd", "Th9h"),
         ip_range=("AJs", "ATs", "QdTd", "44", "Jd9d", "KhJh"),
         bet_fractions=(0.75,),
+        concept="Polarization",
+        read_more=_READ_MORE["Polarization"],
         description=(
             "The flush draw bricked, leaving your top two pair or set as the clear value hand "
             "and your missed draws as the natural bluffs. "
@@ -330,6 +410,8 @@ TWO_TONE = [
         oop_range=("AKs", "KQs", "TT", "KhQh", "JhTh", "99"),
         ip_range=("KJs", "KTs", "QJs", "A5s", "QdJd", "88"),
         bet_fractions=(0.5, 1.0),
+        concept="Range Advantage",
+        read_more=_READ_MORE["Range Advantage"],
         description=(
             "The flush draw missed and your top pair or set is the dominant hand — "
             "villain's range is capped at second pair with no draw to hide behind. "
@@ -343,6 +425,8 @@ TWO_TONE = [
         oop_range=("AQs", "QJs", "99", "55", "KhJh", "Th8h"),
         ip_range=("QTs", "Q9s", "JJ", "A5s", "T9s", "K9s"),
         bet_fractions=(0.5,),
+        concept="Thin Value",
+        read_more=_READ_MORE["Thin Value"],
         description=(
             "With no flush possible on this board, your set or top pair is the best hand "
             "and villain holds weaker queens and underpairs. "
@@ -357,6 +441,8 @@ TWO_TONE = [
         oop_range=("AQs", "AJs", "ATs", "66", "KhQh", "Jh9h"),
         ip_range=("A6s", "A4s", "TT", "KsQs", "QhJh", "T9s"),
         bet_fractions=(0.33, 0.75),
+        concept="Thin Value",
+        read_more=_READ_MORE["Thin Value"],
         description=(
             "Your two pair leads a dry board where villain holds mostly weaker aces "
             "and the occasional set — no flush or straight to fear. "
@@ -371,6 +457,8 @@ TWO_TONE = [
         oop_range=("JTs", "AJs", "ATs", "KdQd", "Qh9h", "33"),
         ip_range=("J9s", "T9s", "QJs", "A5s", "KsJs", "88"),
         bet_fractions=(0.5,),
+        concept="Thin Value",
+        read_more=_READ_MORE["Thin Value"],
         description=(
             "The straight draw missed and your two pair is the top value hand "
             "on this connected board. "
@@ -389,6 +477,8 @@ FLUSH = [
         oop_range=("KhJh", "Th8h", "AcQc", "AsQs", "AA", "KQs"),
         ip_range=("7h6h", "AhJc", "QJs", "99", "55", "JTs"),
         bet_fractions=(0.5, 1.0),
+        concept="Nut Advantage",
+        read_more=_READ_MORE["Nut Advantage"],
         description=(
             "When the flush completes, it becomes the nuts and every non-flush hand — "
             "two pair, sets, overpairs — becomes a bluff-catcher. "
@@ -403,6 +493,8 @@ FLUSH = [
         oop_range=("AsQs", "QsTs", "9s7s", "KK", "AJs", "99"),
         ip_range=("Ts9s", "7s6s", "6s5s", "KQs", "JTs", "88"),
         bet_fractions=(0.5, 1.0),
+        concept="Nut Advantage",
+        read_more=_READ_MORE["Nut Advantage"],
         description=(
             "On a flush board, the nut flush owns every smaller flush — "
             "villain's medium flushes are trapped and have to pay you off. "
@@ -417,6 +509,8 @@ FLUSH = [
         oop_range=("AhQh", "Jh9h", "KK", "TT", "AcKc", "QsJs"),
         ip_range=("Qh8h", "7h5h", "KQs", "66", "A5s", "T9s"),
         bet_fractions=(0.5, 1.0),
+        concept="Nut Advantage",
+        read_more=_READ_MORE["Nut Advantage"],
         description=(
             "Even a top set is just a bluff-catcher once the flush comes in — "
             "the made flush wins at showdown regardless of what else the board shows. "
@@ -431,6 +525,8 @@ FLUSH = [
         oop_range=("AcQc", "Tc8c", "99", "AsAd", "KhQh", "JhTh"),
         ip_range=("Kc7c", "6c5c", "66", "A6s", "QhJh", "T9s"),
         bet_fractions=(0.5, 1.0),
+        concept="Nut Advantage",
+        read_more=_READ_MORE["Nut Advantage"],
         description=(
             "On a flush board, the nut flush and a set play completely different roles — "
             "the flush bets for value, the set can only bluff-catch. "
@@ -444,6 +540,8 @@ FLUSH = [
         oop_range=("AdJd", "Td9d", "KQs", "QQ", "AcKc", "JhTh"),
         ip_range=("Jd8d", "9d8d", "KJs", "77", "A5s", "T9s"),
         bet_fractions=(0.5, 1.0),
+        concept="Nut Advantage",
+        read_more=_READ_MORE["Nut Advantage"],
         description=(
             "On a high flush board, your flush is the primary value hand — "
             "two pair and sets lose to any flush you hold. "
@@ -462,6 +560,8 @@ BROADWAY = [
         oop_range=("AKs", "KQs", "AhTh", "QhJh", "AA", "JJ"),
         ip_range=("AQs", "KJs", "ATs", "A5s", "TT", "QJs"),
         bet_fractions=(0.5, 1.0),
+        concept="Polarization",
+        read_more=_READ_MORE["Polarization"],
         description=(
             "On a K-Q-J board, the ace-ten broadway straight is the nuts and every "
             "strong hand below it — sets, overpairs, two pair — is a bluff-catcher against it. "
@@ -476,6 +576,8 @@ BROADWAY = [
         oop_range=("AKs", "AQs", "66", "KQs", "Qh9h", "JhTh"),
         ip_range=("AJs", "ATs", "KJs", "88", "A5s", "T9s"),
         bet_fractions=(0.5, 1.0),
+        concept="Range Advantage",
+        read_more=_READ_MORE["Range Advantage"],
         description=(
             "Your top two pair or set dominates this board and villain is capped at single pair — "
             "no flush or straight threatens you. "
@@ -489,6 +591,8 @@ BROADWAY = [
         oop_range=("QJs", "AQs", "JJ", "AhTh", "Kh9h", "T9s"),
         ip_range=("QTs", "Q9s", "88", "55", "AJs", "KhTh"),
         bet_fractions=(0.5, 1.0),
+        concept="Polarization",
+        read_more=_READ_MORE["Polarization"],
         description=(
             "Your range is polarized with straights, sets, and two pair, "
             "while villain holds weaker queens and has to call without knowing "
@@ -503,6 +607,8 @@ BROADWAY = [
         oop_range=("AQs", "AhKh", "QJs", "88", "KhJh", "Th9h"),
         ip_range=("AJs", "ATs", "KQs", "A5s", "Q9s", "JJ"),
         bet_fractions=(0.5, 1.0),
+        concept="Range Advantage",
+        read_more=_READ_MORE["Range Advantage"],
         description=(
             "Your top two pair or set leads a board where villain is capped at single-pair hands — "
             "no hidden straights or flushes lurk. "
@@ -520,6 +626,8 @@ LOW = [
         oop_range=("99", "55", "A9s", "77", "KhQh", "JhTh"),
         ip_range=("86s", "33", "T9s", "98s", "A7s", "QJs"),
         bet_fractions=(0.33, 0.75),
+        concept="Thin Value",
+        read_more=_READ_MORE["Thin Value"],
         description=(
             "Your set is strong on this low board, but the eight-six straight "
             "lurks in villain's range and beats you cleanly. "
@@ -534,6 +642,8 @@ LOW = [
         oop_range=("QQ", "TT", "88", "AJs"),
         ip_range=("KJs", "JTs", "99", "T8s", "A5s", "KQs"),
         bet_fractions=(0.5, 1.0),
+        concept="Thin Value",
+        read_more=_READ_MORE["Thin Value"],
         description=(
             "On this low, disconnected board your strong pairs are ahead of nearly "
             "everything villain holds — the board misses most of their range. "
@@ -547,6 +657,8 @@ LOW = [
         oop_range=("99", "AhAs", "KhQh", "JhTh", "Ah4h", "TT"),
         ip_range=("T7s", "97s", "44", "A4s", "QJs", "55"),
         bet_fractions=(0.5, 1.0),
+        concept="Thin Value",
+        read_more=_READ_MORE["Thin Value"],
         description=(
             "Your full house looks dominant, but villain's range hides its own "
             "full houses and trips that beat you. "
@@ -566,6 +678,8 @@ THREE_BET = [
         ip_range=("AJs", "ATs", "QQ", "A5s", "88", "KQs"),
         pot=200.0,
         bet_fractions=(0.5, 1.0),
+        concept="Range Advantage",
+        read_more=_READ_MORE["Range Advantage"],
         description=(
             "In a 3-bet pot, your nut advantage is at its most powerful — "
             "inflated pot sizes mean each bet applies maximum pressure to "
@@ -582,6 +696,8 @@ THREE_BET = [
         ip_range=("66", "44", "JJ", "A5s", "KhJh", "99"),
         pot=200.0,
         bet_fractions=(0.5, 1.0),
+        concept="Bluff Catching",
+        read_more=_READ_MORE["Bluff Catching"],
         description=(
             "In a 3-bet pot on a low board, villain's range frequently contains "
             "flopped sets that crush your overpairs — the big pot makes those mistakes very costly. "
@@ -597,6 +713,8 @@ THREE_BET = [
         ip_range=("AJs", "ATs", "KK", "A5s", "QQ", "66"),
         pot=200.0,
         bet_fractions=(0.5, 1.0),
+        concept="Nut Advantage",
+        read_more=_READ_MORE["Nut Advantage"],
         description=(
             "The river pairing the ace gives your trips a dominant position in this bloated pot — "
             "villain's overpairs are stuck bluff-catching with no way to raise profitably. "
@@ -611,6 +729,8 @@ THREE_BET = [
         ip_range=("AQs", "KJs", "KhTh", "A5s", "TT", "QdJd"),
         pot=200.0,
         bet_fractions=(0.5, 1.0),
+        concept="Range Advantage",
+        read_more=_READ_MORE["Range Advantage"],
         description=(
             "In a 3-bet pot on a broadway board, your top two pair is the best made hand "
             "and villain is capped at weaker two pair or one pair. "
@@ -626,6 +746,8 @@ THREE_BET = [
         ip_range=("J9s", "A9s", "JJ", "A5s", "KdQd", "66"),
         pot=200.0,
         bet_fractions=(0.5, 1.0),
+        concept="Range Advantage",
+        read_more=_READ_MORE["Range Advantage"],
         description=(
             "After the draw bricks, both you and villain hold strong made hands in this "
             "bloated pot — but your top two pair and sets sit at the top of both ranges. "
@@ -729,12 +851,12 @@ def precompute(iterations: int, out_path: str):
 
         print(f" {elapsed:.1f}s  (OOP pot share {ev[0]:.1f})")
 
-        # strategy_dict provides board/pot/ranges/strategies; we add the
-        # lesson metadata FELT needs on top. Schema is unchanged from before.
         entry = {
             "id": sid,
             "name": scenario.name,
             "description": scenario.description,
+            "concept": scenario.concept,
+            "read_more": scenario.read_more,
             "featured_hand_strength": list(scenario.featured_hand_strength),
             "bet_fractions": list(scenario.bet_fractions),
             "raise_fractions": list(scenario.raise_fractions),
