@@ -30,7 +30,7 @@ board validation, solving, and export are all derived automatically. Keep
 ranges around 12-26 combos per side so each spot solves in a couple of seconds.
 
 Usage:
-    python precompute.py [--iterations 300] [--out lesson_strategies.json]
+    python precompute.py [--iterations 1000] [--out lesson_strategies.json]
 """
 
 import argparse
@@ -897,7 +897,7 @@ def _print_summary(out_path, entries, dropped, elapsed):
 
 def main():
     parser = argparse.ArgumentParser(description="Precompute FELT lesson strategies")
-    parser.add_argument("--iterations", type=int, default=300)
+    parser.add_argument("--iterations", type=int, default=1000)
     parser.add_argument("--out", default="lesson_strategies.json")
     args = parser.parse_args()
     precompute(args.iterations, args.out)
