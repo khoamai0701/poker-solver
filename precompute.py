@@ -184,8 +184,9 @@ DRY = [
         description=(
             "Your range dominates villain's bluff-catching range on this dry king-high board — "
             "sets, overpairs, and top pairs all sit ahead of villain's capped holdings. "
-            "Bet large and often; range advantage this clean means you can pressure "
-            "with your entire value range."
+            "The solver leans toward checking to trap rather than leading: when villain bets "
+            "into your checked range, raise large — your range advantage is best expressed "
+            "through check-raises, not open bets."
         ),
     ),
     Scenario(
@@ -199,8 +200,9 @@ DRY = [
         read_more=_READ_MORE["Kicker Battle"],
         description=(
             "Both you and villain hold aces here, so the kicker determines who wins. "
-            "Bet small for thin value — you're ahead of weaker aces, but keep the size down "
-            "to avoid building a big pot against a better kicker."
+            "Villain's range of overpairs and sets is strong enough that checking is the "
+            "dominant play — your weaker aces are bluff-catchers, not thin-value bets, "
+            "and building the pot risks bloating it against a dominating hand."
         ),
     ),
     Scenario(
@@ -231,8 +233,9 @@ DRY = [
         description=(
             "Your range holds a nut advantage on this dry broadway board — "
             "top two pair and sets sit ahead of villain's weaker kings and second pair. "
-            "Missed draws in your range have no showdown value, "
-            "making them the natural bluffs to balance your value bets."
+            "The solver checks most hands to trap, including missed draws; when villain "
+            "bets into your check, sets and two pair raise for value while missed draws "
+            "fold — the lesson is check-then-raise, not open-betting."
         ),
     ),
     Scenario(
@@ -278,8 +281,9 @@ DRY = [
         description=(
             "You hold a weak top pair on an ace-high board where villain's range "
             "includes stronger aces. "
-            "Bet small to extract from the hands you beat and deny equity, "
-            "without bloating the pot against a better ace."
+            "Checking is the correct play — betting risks being raised off a hand "
+            "that can't continue, while checking lets you control the pot size and "
+            "bluff-catch against villain's c-bets with missed draws."
         ),
     ),
 ]
@@ -413,9 +417,10 @@ TWO_TONE = [
         concept="Range Advantage",
         read_more=_READ_MORE["Range Advantage"],
         description=(
-            "The flush draw missed and your top pair or set is the dominant hand — "
+            "The flush draw missed and your top pair or set leads this board — "
             "villain's range is capped at second pair with no draw to hide behind. "
-            "Value bet comfortably; villain is stuck calling with second pair or worse."
+            "Despite the advantage, the solver mostly checks to trap: sets and top pair "
+            "let villain bluff before check-raising, which extracts more than a lead bet."
         ),
     ),
     Scenario(
@@ -564,9 +569,10 @@ BROADWAY = [
         read_more=_READ_MORE["Polarization"],
         description=(
             "On a K-Q-J board, the ace-ten broadway straight is the nuts and every "
-            "strong hand below it — sets, overpairs, two pair — is a bluff-catcher against it. "
-            "When you hold the straight, bet large; when villain raises on this board, "
-            "the straight is heavily represented in their range."
+            "strong hand below it is a bluff-catcher against it. "
+            "When you hold the straight, check to trap — it extracts far more by "
+            "check-raising villain's bets than by leading; open-betting on this "
+            "texture is a giveaway."
         ),
     ),
     Scenario(
@@ -579,9 +585,11 @@ BROADWAY = [
         concept="Range Advantage",
         read_more=_READ_MORE["Range Advantage"],
         description=(
-            "Your top two pair or set dominates this board and villain is capped at single pair — "
-            "no flush or straight threatens you. "
-            "Bet for value; villain's one-pair hands are bluff-catching, not trapping."
+            "Your set leads for value nearly every time, but top two pair mostly checks — "
+            "it prefers to check-raise villain's bets rather than open-bet into potential "
+            "sets lurking in villain's range. "
+            "Range-split: bet the set, check AK and let villain turn weaker aces and "
+            "kings into bluffs."
         ),
     ),
     Scenario(
@@ -645,9 +653,10 @@ LOW = [
         concept="Thin Value",
         read_more=_READ_MORE["Thin Value"],
         description=(
-            "On this low, disconnected board your strong pairs are ahead of nearly "
-            "everything villain holds — the board misses most of their range. "
-            "Even underpairs extract thin value here; bet for what the board allows."
+            "On this low, disconnected board your strong pairs lead villain's range — "
+            "but the solver checks virtually everything to trap. "
+            "Overpairs and top pair check to induce bluffs from villain's missed overcards; "
+            "underpairs are bluff-catchers here, not thin-value bets."
         ),
     ),
     Scenario(
@@ -699,10 +708,11 @@ THREE_BET = [
         concept="Bluff Catching",
         read_more=_READ_MORE["Bluff Catching"],
         description=(
-            "In a 3-bet pot on a low board, villain's range frequently contains "
-            "flopped sets that crush your overpairs — the big pot makes those mistakes very costly. "
-            "Value bet the nutted hands confidently, but respect a raise; "
-            "villain's set is live on this texture."
+            "In a 3-bet pot on a low board, only your set bets with real frequency — "
+            "overpairs and underpairs check almost universally, fearing villain's "
+            "flopped sets in this inflated pot. "
+            "Range-split cleanly: lead with the set, check-call with overpairs, "
+            "and use underpairs as pure bluff-catchers when villain bets."
         ),
     ),
     Scenario(
