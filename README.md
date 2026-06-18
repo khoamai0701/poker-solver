@@ -130,6 +130,35 @@ Notes for the consumer:
 `main.py --out strategy.json` exports a single spot using the same inner
 shape (everything from `board` down, without the lesson metadata).
 
+## Live API (FELT Solve tab)
+
+`api.py` exposes a FastAPI server so the FELT Solve tab can solve arbitrary
+spots in real time from the browser.
+
+```bash
+.venv/bin/pip install -r requirements.txt   # adds fastapi + uvicorn
+uvicorn api:app --reload
+```
+
+The server starts at `http://localhost:8000`. The single endpoint:
+
+```
+POST /solve
+{
+  "board":         ["Ks", "7h", "2d", "8c", "3s"],
+  "oop_range":     ["AA", "KK", "AKs"],
+  "ip_range":      ["KQs", "JTs", "99"],
+  "pot":           100,
+  "bet_fractions": [0.5, 1.0],
+  "iterations":    500          // default; max 10,000
+}
+```
+
+Returns the same dict shape as a single entry in `lesson_strategies.json`
+(board, pot, iterations, expected_pot_share, ranges, strategies). Range specs
+use the same shorthand as `scenario.py`: `"AA"`, `"AKs"`, `"AKo"`, or an
+explicit 4-char combo like `"AsKs"`.
+
 ## Assumptions & possible extensions
 
 - Effective stacks are assumed deep enough for every line (no all-ins).
